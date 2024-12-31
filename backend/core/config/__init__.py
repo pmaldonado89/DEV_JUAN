@@ -1,0 +1,1 @@
+from backend.core.config.database import Base, engine, SessionLocal
