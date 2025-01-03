@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+databases[odbc]
+pyodbc
+pydantic
+python-decouple
