@@ -1,50 +1,65 @@
-# React + TypeScript + Vite
+# ¡MID-LEVEL Fullstack developer!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Te damos la bienvenida a la prueba técnica para el puesto de Fullstack developer! Antes de comenzar, es fundamental que leas detenidamente este README y sigas las instrucciones detalladas a continuación para completar la prueba exitosamente.
 
-Currently, two official plugins are available:
+## Contenido
+* [Información general](#información-general)
+* [Evaluación ](#evaluación)
+* [Instrucciones para el cuestionario](#instrucciones-para-el-cuestionario)
+* [Prueba técnica](#prueba-técnica)
+* [Información adicional](#información-adicional)
+***
+## Información general
+Esta prueba técnica consta de dos partes: un cuestionario y pequeño proyecto en el que podrás demostrar tus habilidades. La descripción de ambas partes se encuentra en este mismo archivo README.md. Por favor, asegúrate de leer y comprender completamente cada sección antes de comenzar.
+***
+## Evaluación
+Cada parte de la prueba será evaluada por nuestro equipo de selección. Valoraremos tanto el conocimiento teórico como las habilidades prácticas que demuestres en el proyecto.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Además de evaluar tus habilidades técnicas, también prestaremos especial atención a cómo gestionas el control de versiones utilizando Git y GitHub. La calidad de tus commits, la organización de tu repositorio y tu capacidad para mantener un historial de cambios claro y comprensible son aspectos que consideraremos en la evaluación. Un uso eficiente de estas herramientas puede sumar puntos extra a tu evaluación global, así que te animamos a mostrar tus habilidades en este aspecto también.
 
-## Expanding the ESLint configuration
+Queremos enfatizar que esta prueba está diseñada para evaluar tus habilidades y capacidad de resolución de problemas en un entorno realista. No te preocupes si no puedes completar todas las partes de la prueba en el tiempo asignado o si necesitas buscar información en línea para ayudarte a resolver ciertos problemas. Lo que más valoramos es tu enfoque en la resolución de problemas y tu capacidad para aprender y adaptarte. Así que, relájate, da lo mejor de ti y muéstranos tu potencial.
+***
+## Instrucciones para el cuestionario
+En la primera parte de la prueba, encontrarás una serie de preguntas abiertas relacionadas con tecnologías y conceptos clave en el desarrollo web. Te recomendamos iniciar el desarrollo de la prueba solucionando este cuestionario. Para hacerlo, puedes modificar el archivo ["Cuestionario2.md"](CUESTIONARIO2.md) que está en la raíz del repositorio para agregar las respuestas debajo de cada pregunta. Trata de llevar las respuestas a tus propias palabras de manera que se evidencie la comprensión de los conceptos.
+***
+## Prueba técnica
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+#### Instrucciones para la prueba
+La segunda parte de la prueba consiste en un proyecto práctico. A continuación, encontrarás una descripción detallada del proyecto que deberás completar utilizando las tecnologías allí mencionadas. Asegúrate de seguir las instrucciones proporcionadas y de subir tu solución al repositorio.
+##### Los cambios en este repositorio los puedes hacer sobre la rama main
 
-- Configure the top-level `parserOptions` property like this:
+#### Objetivo
+Una empresa comercializadora de metales preciosos, necesita una aplicación que les permita gestionar la información de los mineros de subsistencia a quienes les compran dichos metales. La información que se debe gestionar es la siguiente:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Nombre completo
+- Tipo de identificación
+- Número de identificación
+- Municipio
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+##### Tanto el "Municipio" como el "Tipo de identificación" deben ser listas desplegables. 
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+##### El contenido de la lista desplegabe para "Municipio" se debe consumir del API de datos abiertos: https://www.datos.gov.co/resource/xdk5-pm3f.json 
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+#### Must-have (Requerido para la prueba)
+1. En este mismo repositorio debes crear dos proyectos: Uno para el backend con NodeJS y otro para el frontend con React
+2. La aplicación debe manejar autenticación y modulo de administración para los perfiles
+3. Crea una BD, de preferencia con *SQL Server*, para gestionar la información solicitada. En este punto puedes usar el *ODM* que mejor te parezca. Te sugerimos *SQL Server Express* (https://www.microsoft.com/es-co/sql-server/sql-server-downloads)), pero eres libre de elegir el que mejor conozcas.
+4. En la web, debe existir un menú para alternar entre las opciones *Administración* *Mineros* y *Home*. Esta última (Home) solo es una página de bienvenida que no requiere tener nada en particular.
+5. La vista de *Mineros* debe tener una tabla con los registros guardados, desde la que se pueda actualizar o eliminar cualquiera de los registros.
+6. Permitir la generación de informes
+7. En esta misma vista, debe estar la creación de cada minero. 
+
+#### Nice to have (Opcional, suma puntos)
+1. Utilizar alguna biblioteca para los estilos como *Bootstrap, Material, PrimeNg, etc.*
+2. Sacar provecho de los componentes de Angular.
+3. Buenas prácticas de programación.
+4. Comentarios acertados.
+5. Agregar filtros a la tabla de *Mineros*.
+6. Estimación de los requerimientos para el desarrollo del proyecto.
+    - En caso de realizarlo, adjuntar evidencia en la raíz del repositorio.
+7. Almacenar foto de cada minero.
+***
+## Información adicional
+Por favor, sigue las instrucciones específicas para cada parte de la prueba en sus respectivas secciones y asegúrate de subir tus respuestas y tu solución del proyecto a este repositorio.
+***
+¡Buena suerte! Esperamos ver tu talento y habilidades en acción. Si tienes alguna pregunta, no dudes en ponerte en contacto con nosotros a través del correo pmaldonado@sunvalleyinv.com
